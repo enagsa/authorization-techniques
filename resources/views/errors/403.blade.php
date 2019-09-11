@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>You shall NOT Pass</h1>
+<div class="container text-center">
+	<img src="{{ asset('403.gif') }}" alt="Error 403 - Forbidden" title="Error 403 - Forbidden"/>
+    <h1 class="pt-3">Error 403 - Forbidden</h1>
 </div>
 @endsection

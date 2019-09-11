@@ -20,17 +20,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 
-/*Route::prefix('admin')
-	->middleware(['auth', 'admin'])
-	->group(function(){
-		Route::get('/', function(){
-				return view('admin.dashboard');
-			})
-			->name('admin_dashboard');
-
-		Route::get('/events', function(){
-				return 'Admin Events';
-			})
-			->name('admin_events');
-	});*/
-
