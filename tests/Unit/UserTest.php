@@ -12,16 +12,9 @@ class UserTest extends TestCase
 	use RefreshDatabase;
 
     /** @test */
-    function a_user_can_be_an_admin(){
-    	$user = factory(User::class)->create([
-    		'admin' => false
-    	]);
+    function a_user_cannot_be_an_admin(){
+    	$user = $this->createUser();
 
     	$this->assertFalse($user->isAdmin());
-
-    	$user->admin = true;
-    	$user->save();
-
-    	$this->assertTrue($user->isAdmin());
     }
 }

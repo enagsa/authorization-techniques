@@ -19,21 +19,15 @@ class CustomDirectivesTest extends TestCase
 
     /** @test */
     function admin_directive_is_false_for_non_admins(){
-    	$user = factory(User::class)->create([
-    		'admin' => false
-    	]);
-
-    	$this->actingAs($user)
+    	$this->actingAs($this->createUser())
     		->assertFalse(Blade::check('admin'));
     }
 
     /** @test */
     function admin_directive_is_true_for_admins(){
-    	$user = factory(User::class)->create([
-    		'admin' => true
-    	]);
+        $this->markTestIncomplete();
 
-    	$this->actingAs($user)
+    	$this->actingAsAdmin()
     		->assertTrue(Blade::check('admin'));
     }
 }
