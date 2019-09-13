@@ -24,13 +24,13 @@ class AdminEventsTest extends TestCase
         $this->actingAsUser()
             ->get(route('admin_events'))
             ->assertStatus(302)
-            ->assertRedirect(route('login'));
+            ->assertRedirect(route('admin.login'));
     }
 
     /** @test */
     function guests_cannot_visit_the_admin_events_page(){
         $this->get(route('admin_events'))
             ->assertStatus(302)
-            ->assertRedirect(route('login'));
+            ->assertRedirect(route('admin.login'));
     }
 }

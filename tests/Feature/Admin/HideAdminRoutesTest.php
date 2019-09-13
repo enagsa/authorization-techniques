@@ -14,14 +14,14 @@ class HideAdminRoutesTest extends TestCase
     function it_does_not_allow_guests_to_discover_admin_urls(){
         $this->get('/admin/invalid-url')
             ->assertStatus(302)
-            ->assertRedirect('login');
+            ->assertRedirect(route('admin.login'));
     }
 
     /** @test */
     function it_does_not_allow_guests_to_discover_admin_urls_using_post(){
         $this->post('/admin/invalid-url')
             ->assertStatus(302)
-            ->assertRedirect('login');
+            ->assertRedirect(route('admin.login'));
     }
 
     /** @test */
